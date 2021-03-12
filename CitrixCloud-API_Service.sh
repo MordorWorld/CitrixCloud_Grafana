@@ -30,10 +30,10 @@
 ##			   json_string_fields = ["*"]
 ##########################################################################################
 ########################################CLIENT API########################################
-ClientName="SCA"
-CLIENTID="cdc6b179-5b07-47e3-84e5-1eab6f9b7487"  		#ID Cliente API Citrix Cloud
-CLIENTSECRET="iWidcpOHVQzlxFcqU3MF2Q=="      			#Secret API Citrix Cloud
-CustomerID="t3e4g3v7zakw"            					#ID Cliente
+ClientName="Nombre Cliente"
+CLIENTID="Cliente ID"							  		#ID Cliente API Citrix Cloud
+CLIENTSECRET="Secret Key"				      			#Secret API Citrix Cloud
+CustomerID="Customer ID"            					#ID Cliente
 FilePath="/etc/telegraf/CitrixCloud"					#Ubicación de Scripts
 SiteIDFile="$FilePath/0-SiteID.$ClientName"      		#Fichero de SiteID
 TokenFile="$FilePath/0-Token.$ClientName"     			#Fichero de Token

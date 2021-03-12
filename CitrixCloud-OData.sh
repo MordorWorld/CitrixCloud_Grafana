@@ -36,10 +36,10 @@
 ##
 ######################################################################################################
 ########################################CLIENT API####################################################
-ClientName="SCA"
-CLIENTID="cdc6b179-5b07-47e3-84e5-1eab6f9b7487"   #Rellenar por Cliente
-CLIENTSECRET="iWidcpOHVQzlxFcqU3MF2Q=="       #Rellenar Secret
-CustomerID="t3e4g3v7zakw"             #Codigo Cliente
+ClientName="Nombre Cliente"
+CLIENTID="Cliente ID"   #Rellenar por Cliente
+CLIENTSECRET="Secret Ke"       #Rellenar Secret
+CustomerID="Customer ID"             #Codigo Cliente
 FilePath="/etc/telegraf/CitrixCloud"     #Path de Scripts
 SiteIDFile="$FilePath/0-SiteID.$ClientName"       #Fichero de SiteID
 TokenFile="$FilePath/0-Token.$ClientName"      #Fichero de Token
