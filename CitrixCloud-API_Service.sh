@@ -4,7 +4,7 @@
 ##       Created on:   	03/11/2021 
 ##       Created by:   	GrumpyGon & Bujarron
 ##       Organization: 	www.mordor.world
-##		 Version: 		02.01
+##		 Version: 		02.02
 ##      ===========================================================================
 ##      .DESCRIPTION
 ##         Script de recolección de Citrix Cloud con API Service diseñado para telegraf e influxdb
