@@ -1,4 +1,4 @@
-# CitrixCloud_Grafana
+# Captura de datos Citrix Cloud VAAD para mostrarlos en Grafana
 Script Capture Info. Citrix Cloud from Grafana
 
 1- Accedemos a nuestra cuenta de Citrix Cloud y nos dirigimos a "Identity and Access Management" a la pestaña de API Access.
