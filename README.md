@@ -7,5 +7,6 @@ Script Capture Info. Citrix Cloud from Grafana
 ![image](https://user-images.githubusercontent.com/80542322/110987618-a521db00-836f-11eb-8ebf-3834f20f381b.png)
 
 4- No falicitara el ID y Secret
+
 ![image](https://user-images.githubusercontent.com/80542322/110987928-21b4b980-8370-11eb-8033-557d698a50b0.png)
 
