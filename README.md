@@ -1,5 +1,5 @@
-# Captura de datos Citrix Cloud VAAD para mostrarlos en Grafana
-Script Capture Info. Citrix Cloud from Grafana
+# Captura de datos Citrix Cloud VAAD para mostrarlos en Grafana con InfluxDB
+Los script capturaran la información de Citrix VAADs y la adapta para importar a InfluxDB
 
 1- Accedemos a nuestra cuenta de Citrix Cloud y nos dirigimos a "Identity and Access Management" a la pestaña de API Access.
 
