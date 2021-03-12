@@ -2,8 +2,11 @@
 Script Capture Info. Citrix Cloud from Grafana
 
 1- Accedemos a nuestra cuenta de Citrix Cloud y nos dirigimos a "Identity and Access Management" a la pestaña de API Access.
+
 2- Podremos ver nuestro Customer ID.
+
 3- Introducimos un nombre para nuestro cliente API y "Create Client".
+
 ![image](https://user-images.githubusercontent.com/80542322/110987618-a521db00-836f-11eb-8ebf-3834f20f381b.png)
 
 4- No falicitara el ID y Secret
