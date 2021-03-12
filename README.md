@@ -13,3 +13,16 @@ Los script capturaran la información de Citrix VAADs y la adapta para importar 
 
 ![image](https://user-images.githubusercontent.com/80542322/110987928-21b4b980-8370-11eb-8033-557d698a50b0.png)
 
+5- Introducimos los datos en el Script.
+CLIENTID="Cliente ID"   		
+CLIENTSECRET="Secret Ke"    
+CustomerID="Customer ID"    
+
+6- Copiamos el Script en la maquina linux con telegraf.
+
+7- Para el Script de Api Service, duplicaremos el script para cada tipo de captura de (Applications, Machines, DeliveryGroups, MachineCatalogs, Sessions)
+
+8- Editamos la linea de (Capture="Applications") para especificar la captura, de la URL https://api.cloud.com/cvadapis/$Site/$Capture
+
+En la Web https://developer.cloud.com/citrixworkspace/virtual-apps-and-desktops/cvad-rest-apis/docs/overview podremos ver las URL de captura de datos.
+
