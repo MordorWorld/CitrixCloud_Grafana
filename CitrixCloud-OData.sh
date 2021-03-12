@@ -4,7 +4,7 @@
 ##       Created on:    03/11/2021
 ##       Created by:    GrumpyGon & Bujarron
 ##       Organization:  www.mordor.world
-##   Version:   02.01
+##       Version:   02.02
 ##      ===========================================================================
 ##      .DESCRIPTION
 ##         Script de recolección de Citrix Cloud con OData diseñado para telegraf e influxdb
@@ -37,9 +37,9 @@
 ######################################################################################################
 ########################################CLIENT API####################################################
 ClientName="Nombre Cliente"
-CLIENTID="Cliente ID"   #Rellenar por Cliente
-CLIENTSECRET="Secret Ke"       #Rellenar Secret
-CustomerID="Customer ID"             #Codigo Cliente
+CLIENTID="Cliente ID"   		#Rellenar por Cliente
+CLIENTSECRET="Secret Ke"        #Rellenar Secret
+CustomerID="Customer ID"        #Codigo Cliente
 FilePath="/etc/telegraf/CitrixCloud"     #Path de Scripts
 SiteIDFile="$FilePath/0-SiteID.$ClientName"       #Fichero de SiteID
 TokenFile="$FilePath/0-Token.$ClientName"      #Fichero de Token
