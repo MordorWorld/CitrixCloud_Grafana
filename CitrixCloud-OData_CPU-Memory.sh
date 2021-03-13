@@ -4,7 +4,7 @@
 ##       Created on:    03/11/2021
 ##       Created by:    GrumpyGon & Bujarron
 ##       Organization:  www.mordor.world
-##       Version:   02.04
+##       Version:   02.05
 ##      ===========================================================================
 ##      .DESCRIPTION
 ##         Script de recolección de Citrix Cloud con OData diseñado para telegraf e influxdb
@@ -42,7 +42,6 @@ CLIENTSECRET="Secret Key"        						#Rellenar Secret
 CustomerID="Customer ID"        						#Codigo Cliente
 Capture="CPU-MEM"          								
 Retry=3              									#Reintentos de Conexión Captura
-TimeCapture=20											#Minutos de Captura
 FilePath="/etc/telegraf/CitrixCloud"     				#Path de Scripts
 SiteIDFile="$FilePath/0-SiteID.$ClientName"       		#Fichero de SiteID
 TokenFile="$FilePath/0-Token.$ClientName"      			#Fichero de Token
@@ -127,7 +126,7 @@ function Get_Code () {
 
 function Get_Info () {
     Write-Log "INFO - Generando OData Json"
-    timeconsulta=$(date +%Y-%m-%dT%T --date='-$TimeCapture minutes')   #Tiempo de Captura
+    timeconsulta=$(date +%Y-%m-%dT%T --date='-20 minutes')   		   #Tiempo de Captura
     timeconsulta=$(echo $timeconsulta | sed -r 's/[:]+/%3A/g' )        #Cambia los : por -
     select='?$expand=Machine($select=DnsName)&'                        #expandir a otra tabla para capturar datos
     filter='$apply=filter%28CollectedDate%20ge%20'$timeconsulta'Z%29&' #Filtro de fechas para la captura
