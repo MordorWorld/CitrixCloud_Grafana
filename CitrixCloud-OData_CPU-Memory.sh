@@ -4,7 +4,7 @@
 ##       Created on:    03/11/2021
 ##       Created by:    GrumpyGon & Bujarron
 ##       Organization:  www.mordor.world
-##       Version:   02.03
+##       Version:   02.04
 ##      ===========================================================================
 ##      .DESCRIPTION
 ##         Script de recolección de Citrix Cloud con OData diseñado para telegraf e influxdb
@@ -40,14 +40,14 @@ ClientName="Nombre Cliente"
 CLIENTID="Cliente ID"   								#Rellenar por Cliente
 CLIENTSECRET="Secret Key"        						#Rellenar Secret
 CustomerID="Customer ID"        						#Codigo Cliente
+Capture="CPU-MEM"          								
+Retry=3              									#Reintentos de Conexión Captura
+TimeCapture=20											#Minutos de Captura
 FilePath="/etc/telegraf/CitrixCloud"     				#Path de Scripts
 SiteIDFile="$FilePath/0-SiteID.$ClientName"       		#Fichero de SiteID
 TokenFile="$FilePath/0-Token.$ClientName"      			#Fichero de Token
 LogFile="/var/log/telegraf/$ClientName-CitrixCloud.log" #Fichero de Log
 LogSize=1000000           								#Tamaño MAX. fichero logs
-Capture="CPU-MEM"          								#Tipo de Captura Application,Sessions,CPU,...
-Retry=3              									#Reintentos de Conexion Captura
-TimeCapture=60											#Minutos de Captura
 #################################################URLs#################################################
 SiteMe="https://api.cloud.com/cvadapis/me"
 trustUrl="https://api.cloud.com/cctrustoauth2/root/tokens/clients"
