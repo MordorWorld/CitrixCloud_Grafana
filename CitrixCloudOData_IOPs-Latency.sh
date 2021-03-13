@@ -4,7 +4,7 @@
 ##       Created on:    03/11/2021
 ##       Created by:    GrumpyGon & Bujarron
 ##       Organization:  www.mordor.world
-##       Version:   02.02
+##       Version:   02.03
 ##      ===========================================================================
 ##      .DESCRIPTION
 ##         Script de recolección de Citrix Cloud con OData diseñado para telegraf e influxdb
@@ -37,16 +37,17 @@
 ######################################################################################################
 ########################################CLIENT API####################################################
 ClientName="Nombre Cliente"
-CLIENTID="Cliente ID"   #Rellenar por Cliente
-CLIENTSECRET="Secret Key"       #Rellenar Secret
-CustomerID="Customer ID"             #Codigo Cliente
-FilePath="/etc/telegraf/CitrixCloud"     #Path de Scripts
-SiteIDFile="$FilePath/0-SiteID.$ClientName"       #Fichero de SiteID
-TokenFile="$FilePath/0-Token.$ClientName"      #Fichero de Token
+CLIENTID="Cliente ID"   								##Rellenar por Cliente
+CLIENTSECRET="Secret Key"       						##Rellenar Secret
+CustomerID="Customer ID"             					##Codigo Cliente
+FilePath="/etc/telegraf/CitrixCloud"     				#Path de Scripts
+SiteIDFile="$FilePath/0-SiteID.$ClientName"       		#Fichero de SiteID
+TokenFile="$FilePath/0-Token.$ClientName"      			#Fichero de Token
 LogFile="/var/log/telegraf/$ClientName-CitrixCloud.log" #Fichero de Log
-LogSize=1000000           #Tamaño MAX. fichero logs
-Capture="CPU-MEM"          #Tipo de Captura Application,Sessions,CPU,...
-Retry=3              #Reintentos de Conexion Captura
+LogSize=1000000           								##Tamaño MAX. fichero logs
+Capture="CPU-MEM"          								##Tipo de Captura Application,Sessions,CPU,...
+Retry=3              									##Reintentos de Conexion Captura
+TimeCapture=60											##Minutos de Captura Minimo 60 (Citrix almacena las IOPs y latencia cada hora)
 #################################################URLs#################################################
 SiteMe="https://api.cloud.com/cvadapis/me"
 trustUrl="https://api.cloud.com/cctrustoauth2/root/tokens/clients"
@@ -126,7 +127,7 @@ function Get_Code () {
 
 function Get_Info () {
     Write-Log "INFO - Generando OData Json"
-    timeconsulta=$(date +%Y-%m-%dT%T --date='-40 minutes')             #Tiempo de Captura
+    timeconsulta=$(date +%Y-%m-%dT%T --date='-$TimeCapture minutes')             #Tiempo de Captura
     timeconsulta=$(echo $timeconsulta | sed -r 's/[:]+/%3A/g' )        #Cambia los : por -
     select='?$expand=Machine($select=DnsName)&'                        #expandir a otra tabla para capturar datos
     filter='$apply=filter%28CollectedDate%20ge%20'$timeconsulta'Z%29&' #Filtro de fechas para la captura
