@@ -37,9 +37,9 @@
 ######################################################################################################
 ########################################CLIENT API####################################################
 ClientName="Nombre Cliente"
-CLIENTID="Cliente ID"   		#Rellenar por Cliente
-CLIENTSECRET="Secret Key"        #Rellenar Secret
-CustomerID="Customer ID"        #Codigo Cliente
+CLIENTID="Cliente ID"   #Rellenar por Cliente
+CLIENTSECRET="Secret Key"       #Rellenar Secret
+CustomerID="Customer ID"             #Codigo Cliente
 FilePath="/etc/telegraf/CitrixCloud"     #Path de Scripts
 SiteIDFile="$FilePath/0-SiteID.$ClientName"       #Fichero de SiteID
 TokenFile="$FilePath/0-Token.$ClientName"      #Fichero de Token
@@ -130,7 +130,7 @@ function Get_Info () {
     timeconsulta=$(echo $timeconsulta | sed -r 's/[:]+/%3A/g' )        #Cambia los : por -
     select='?$expand=Machine($select=DnsName)&'                        #expandir a otra tabla para capturar datos
     filter='$apply=filter%28CollectedDate%20ge%20'$timeconsulta'Z%29&' #Filtro de fechas para la captura
-    UrlGWEDP="https://api-ap-s.cloud.com/monitorodata/ResourceUtilization$select$filter"
+	UrlGWEDP="https://api-ap-s.cloud.com/monitorodata/MachineMetric$select$filter"
     Info=$(curl -s --write-out "\n%{http_code}\n" ${UrlGWEDP} -H "${j}" -H "${1}" -H "${HeaderCustomerID}" )
     Get_Code "$Info" "$UrlGWEDP" 										#Ver codigos de error
     Info=$(echo "$Info" | sed '$d' )     								#Borra la ultima linea Error Code
