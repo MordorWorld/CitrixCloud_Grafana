@@ -34,13 +34,13 @@ ClientName="Nombre Cliente"
 CLIENTID="Cliente ID"							  		#ID Cliente API Citrix Cloud
 CLIENTSECRET="Secret Key"				      			#Secret API Citrix Cloud
 CustomerID="Customer ID"            					#ID Cliente
+Capture="Applications"									#Tipo de Captura (Applications, Machines, DeliveryGroups, MachineCatalogs, Sessions)
+Retry=3
 FilePath="/etc/telegraf/CitrixCloud"					#Ubicación de Scripts
 SiteIDFile="$FilePath/0-SiteID.$ClientName"      		#Fichero de SiteID
 TokenFile="$FilePath/0-Token.$ClientName"     			#Fichero de Token
 LogFile="/var/log/telegraf/$ClientName-CitrixCloud.log"	#Fichero de Logs
 LogSize=1000000
-Capture="Applications"									#Tipo de Captura (Applications, Machines, DeliveryGroups, MachineCatalogs, Sessions)
-Retry=3
 ###########################################URLs###########################################
 SiteMe="https://api.cloud.com/cvadapis/me"
 trustUrl="https://api.cloud.com/cctrustoauth2/root/tokens/clients"
