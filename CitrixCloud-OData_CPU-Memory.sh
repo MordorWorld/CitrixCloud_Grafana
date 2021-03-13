@@ -22,9 +22,7 @@
 ##  .TELEGRAF Config
 ##   Fichero de configuración para telegraf
 ##    [[inputs.exec]]
-##     commands = ["/etc/telegraf/CitrixCloud/File-CPU.sh",
-##      "/etc/telegraf/CitrixCloud/File-IOPs.sh"
-##     ]
+##     commands = ["/etc/telegraf/CitrixCloud/File-CPU.sh" ]
 ##     name_override = "Odata_ResourceGlobal"
 ##     timeout = "60s"
 ##     interval = "3600s"
