@@ -48,7 +48,7 @@ LogSize=1000000           								#Tamaño MAX. fichero logs
 #################################################URLs#################################################
 SiteMe="https://api.cloud.com/cvadapis/me"
 trustUrl="https://api.cloud.com/cctrustoauth2/root/tokens/clients"
-HeaderCustomerID="Customer: $CustomerID"
+HeaderCustomerID="Citrix-CustomerId: $CustomerID"
 j="Accept: application/json"
 ##############################################FUNCTIONS###############################################
 function Write-Log(){ #Function Write File Logs
