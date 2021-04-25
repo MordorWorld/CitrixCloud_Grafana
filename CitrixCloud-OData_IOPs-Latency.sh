@@ -4,7 +4,7 @@
 ##       Created on:    03/11/2021
 ##       Created by:    GrumpyGon & Bujarron
 ##       Organization:  www.mordor.world
-##       Version:   02.05
+##       Version:   02.06
 ##      ===========================================================================
 ##      .DESCRIPTION
 ##         Script de recolección de Citrix Cloud con OData diseñado para telegraf e influxdb
@@ -45,6 +45,7 @@ SiteIDFile="$FilePath/0-SiteID.$ClientName"       		#Fichero de SiteID
 TokenFile="$FilePath/0-Token.$ClientName"      			#Fichero de Token
 LogFile="/var/log/telegraf/$ClientName-CitrixCloud.log" #Fichero de Log
 LogSize=1000000           								##Tamaño MAX. fichero logs
+Time_capture="-180 minutes"
 #################################################URLs#################################################
 SiteMe="https://api.cloud.com/cvadapis/me"
 trustUrl="https://api.cloud.com/cctrustoauth2/root/tokens/clients"
@@ -124,7 +125,7 @@ function Get_Code () {
 
 function Get_Info () {
     Write-Log "INFO - Generando OData Json"
-    timeconsulta=$(date +%Y-%m-%dT%T --date='-180 minutes')            #Tiempo de Captura
+    timeconsulta=$(date +%Y-%m-%dT%T --date="$Time_capture")            #Tiempo de Captura
     timeconsulta=$(echo $timeconsulta | sed -r 's/[:]+/%3A/g' )        #Cambia los : por -
     select='?$expand=Machine($select=DnsName)&'                        #expandir a otra tabla para capturar datos
     filter='$apply=filter%28CollectedDate%20ge%20'$timeconsulta'Z%29&' #Filtro de fechas para la captura
